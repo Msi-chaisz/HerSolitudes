@@ -1,0 +1,107 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <title>Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="Contact.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  </head>
+
+  <body>
+  <nav class="MainNav2">
+      <div class="MainNav">
+          <ul>
+              <a href="index.html"><li>Home</li></a>
+              <a href="Welcome.html"><li>View Now</li></a>
+              <a href="More.html"><li>More</li></a>
+              <a href="Contact.html"><li>Contact</li></a>
+          </ul>  
+      </div>
+  </nav>
+
+  <div class="Main-content">
+  <div class="container">
+    <h2 class="title">Start a Conversation</h2>
+
+    <div class="content">
+
+      <div class="left">
+          <div class="center">
+              <img src="Pictures/profile.png" alt="My Photo">
+          </div>
+
+        <h3>Contact Info</h3>
+        <div class="info">
+          <p><i class="fa-regular fa-envelope"></i> quiazonchannel.acads@gmail.com</p>
+          <p><i class="fa-solid fa-at"></i> Channel Aleli B. Quiazon</p>
+        </div>
+
+        <h3>Social Handles</h3>
+        <div class="info">
+          <p><i class="fa-brands fa-facebook"></i> Channel Aleli Quiazon</p>
+          <p><i class="fa-brands fa-telegram"></i> Chaibusiness</p>
+        </div>
+      </div>
+      <div class="right">
+    <form id="contact-form">
+  <input type="text" name="user_name" placeholder="Name" required>
+  <input type="email" name="user_email" placeholder="Email" required>
+  <textarea name="message" rows="4" placeholder="Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="footer">
+      <div class="cast">
+          <h3>Behind the Scenes</h3>
+          <p>Director: My Decisions</p>
+          <p>Producer: My Hard Work</p>
+          <p>Editor: My Mistakes</p>
+          <p>Soundtrack: My Emotions</p>
+          <p>Special Effects: My Growth</p>
+      </div>
+
+      <div class="watch">
+          <h3>Where to Contact</h3>
+          <div class="watch-icons">
+              <a href="https://web.facebook.com/aleli.quiazon.7"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://x.com/"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://www.instagram.com/ms.chaiss/"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+      </div>
+  </footer>
+
+
+  <script>
+  (function(){
+    emailjs.init("fAc8O8F3gVJe8WjNI"); // your public key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    emailjs.sendForm(
+      "service_urod7jr",
+      "template_fzthzvm",
+      this
+    )
+    .then(() => {
+      alert("Message sent successfully!");
+      this.reset(); // ✅ clears form after sending
+    })
+    .catch((error) => {
+    console.error("FULL ERROR:", error);
+    alert("Error: " + error.text);
+  });
+
+  });
+  </script>
+
+  </body>
+  </html>

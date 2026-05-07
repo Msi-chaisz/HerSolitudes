@@ -1,0 +1,929 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+       background: #111;
+    background-size: cover;
+
+}
+
+
+.sidebar {
+    position: fixed;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 15px 10px;
+    border-radius: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    width: 45px;
+    height: 45px;
+    margin: 12px 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover {
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 10px #ff66b2;
+}
+
+.sidebar ul li.active {
+    background: #ff4da6;
+    box-shadow: 0 0 15px #ff4da6;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+
+section {
+    margin-left: 140px;
+    padding: 40px 60px;
+}
+
+.Archive-Title{
+    height: 140px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: -60px;
+  
+}
+.Archive-Title h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.Archive-Title p {
+    color: #ffe6f2;
+    margin-bottom: 30px;
+}
+
+
+.archive-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 55px;
+}
+
+
+.folder-card {
+    position: relative;
+    background: #fff0f6;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+
+.folder-tab {
+    position: absolute;
+    top: -8px;
+    left: 12px;
+    width: 60px;
+    height: 14px;
+    background: #ff4da6;
+    border-radius: 4px 4px 0 0;
+}
+
+
+.folder-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.folder-card p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+}
+
+
+.folder-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(255, 77, 166, 0.4);
+}
+
+
+.film-strip {
+    display: flex;
+    gap: 15px;
+    padding: 40px;
+    overflow-x: auto;
+    margin-top: 50px;
+  
+}
+
+.film-card {
+    position: relative;
+    min-width: 340px;
+    height: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    transition: 0.4s;
+    filter: brightness(0.6);
+    margin-left: 30px;
+}
+
+
+.film-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+     filter: contrast(1.1) brightness(0.95) saturate(1.2);
+
+}
+
+
+.film-card.active {
+    transform: scale(1.2);
+    filter: brightness(1);
+    z-index: 2;
+}
+
+
+.film-card:hover {
+    transform: scale(1.2);
+    filter: brightness(1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+}
+.Information {
+    max-width: 700px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.Information p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #fff;
+    margin-bottom: 18px;
+}
+.lock-screen {
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 200px;
+    left: 450px;
+
+}
+
+.lock-box {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 320px;
+    color: white;
+    height: 200px;
+    padding-top: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.lock-box input {
+    width: 300px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.lock-box button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background: #ff4da6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.Spotify {
+  max-width: 300px;
+    top: -110px;
+  position: relative;
+  right: -950px;
+}
+.Spotifys{
+     max-width: 300px;
+    top: -110px;
+  position: relative;
+  right: -880px;
+}
+
+.Archive-Title button{
+    position: relative;
+    top: -100px;
+    left: 1080px;
+    width: 180px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+   background-color:#ff5bb7;
+     backdrop-filter:blur(50px);
+    color: white;
+    transition: .2s ease-in;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.Archive-Title button:hover{
+     transform: translateY(-2px);
+     border: 4px #ff4da6;
+     background-color: transparent;
+}
+
+.skills-card{
+    width:780px;
+    padding:45px;
+    height: 500px;
+    border-radius:35px;
+    background:rgba(255,255,255,0.07);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    color:white;
+    position: relative;
+    left: 400px;
+    top: -545px;
+}
+
+
+.quote{
+    font-size:70px;
+    color:#ff5bb7;
+    line-height:40px;
+    margin-bottom:-10px;
+}
+
+.skills-card p{
+    font-size:18px;
+    line-height:1.8;
+    color:#fff;
+}
+
+
+.divider{
+    width:100%;
+    height:1px;
+    background:rgba(255,255,255,0.15);
+    margin:30px 0;
+    position:relative;
+}
+
+.divider::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#ff4da6;
+    box-shadow:0 0 15px #ff4da6;
+}
+
+.skill{
+    margin-bottom:30px;
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:15px;
+}
+
+.skill-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.icon-box{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.08);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#ff7ac1;
+    box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.04),
+    0 0 12px rgba(255,77,166,0.25);
+}
+
+.icon-box i{
+    font-size:16px;
+}
+
+
+.skill-left span{
+    font-size:18px;
+}
+
+
+.percent{
+    color:#ff93cf;
+    font-size:18px;
+    font-weight:600;
+}
+
+
+.bar{
+    width:100%;
+    height:14px;
+    border-radius:20px;
+    background:#3d2740;
+    overflow:hidden;
+}
+
+
+.fill{
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(
+    90deg,
+    #ff4da6,
+    #ff8ed0
+    );
+    box-shadow:0 0 10px #ff4da6;
+}
+
+
+.w90{
+    width:95%;
+}
+
+.w85{
+    width:80%;
+}
+
+
+.w95{
+    width:85%;
+}
+.title{
+     font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: white;
+}
+
+.containerImage {
+    width: 1200px;
+    margin-top: 30px;
+   
+   
+}
+ .manga-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+ .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      height: 300px;
+      background: #222;
+      transition: transform 0.3s ease;
+      width: 280px;
+    }
+.none{
+     position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    
+      height: 280px;
+      background: #111;
+   
+      width: 250px;
+}
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.08);
+    }
+
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95) 20%,
+        rgba(0, 0, 0, 0.3) 70%,
+        rgba(0, 0, 0, 0)
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 18px;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.35s ease;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .chapter {
+      position: absolute;
+      top: 12px;
+      right: 50px;
+      background: #d60000;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+
+    .manga-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .details {
+      font-size: 14px;
+      color: #ddd;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .details span {
+      color: white;
+      font-weight: bold;
+    }
+
+    .description {
+      font-size: 13px;
+      color: #bbb;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: fit-content;
+      padding: 10px 18px;
+      background: #d60000;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff1f1f;
+    }
+.center img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #d7837f;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.names h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: white; 
+}
+.names{
+    position: relative;
+    right: 870px;
+    width: 200px ;
+}
+.names p{
+    margin-top: -30px;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+ 
+  .sidebar {
+    left: 20px;
+    padding: 12px 8px;
+  }
+
+  .sidebar ul li {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  section {
+    margin-left: 110px;
+    padding: 35px 30px;
+  }
+
+
+  .Archive-Title {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .Archive-Title h1 {
+    font-size: 32px;
+  }
+
+  .Archive-Title button {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+  }
+
+
+  .archive-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+
+  .film-strip {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .film-card {
+    min-width: 280px;
+    height: 240px;
+    margin-left: 0;
+  }
+
+  .film-card.active,
+  .film-card:hover {
+    transform: scale(1.08);
+  }
+
+ 
+  .Information {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .Information p {
+    font-size: 16px;
+  }
+
+
+  .lock-screen {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px;
+  }
+
+  .lock-box {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .lock-box input {
+    width: 100%;
+  }
+
+ 
+  .Spotify,
+  .Spotifys {
+    position: relative;
+    right: 0;
+    top: 0;
+    margin-top: 30px;
+    max-width: 100%;
+  }
+
+
+  .skills-card {
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    margin-top: 40px;
+    padding: 35px;
+  }
+
+  .quote {
+    font-size: 55px;
+  }
+
+  .skills-card p {
+    font-size: 16px;
+  }
+
+  
+  .containerImage {
+    width: 100%;
+  }
+
+  .manga-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .card {
+    width: 100%;
+    height: 280px;
+  }
+
+  .none {
+    width: 100%;
+    height: 260px;
+  }
+
+
+  .center img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .names {
+    right: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .names h1 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 425px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+
+  .sidebar {
+    position: fixed;
+    left: 50%;
+    bottom: 15px;
+    top: auto;
+    transform: translateX(-50%);
+    display: flex;
+    padding: 10px 15px;
+    border-radius: 30px;
+    z-index: 999;
+  }
+
+  .sidebar ul {
+    display: flex;
+    gap: 10px;
+  }
+
+  .sidebar ul li {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+
+
+  section {
+    margin-left: 0;
+    padding: 25px 20px 100px;
+  }
+
+ 
+  .Archive-Title {
+    margin-bottom: 20px;
+    height: auto;
+  }
+
+  .Archive-Title h1 {
+    font-size: 26px;
+  }
+
+  .Archive-Title p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .Archive-Title button {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+ 
+  .archive-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .folder-card img {
+    height: 220px;
+  }
+
+
+  .film-strip {
+    padding: 10px;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .film-card {
+    min-width: 230px;
+    height: 200px;
+    margin-left: 0;
+  }
+
+  .film-card.active,
+  .film-card:hover {
+    transform: scale(1.03);
+  }
+
+  .overlay {
+    padding: 12px;
+  }
+
+ 
+  .Information {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .Information p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+ 
+  .lock-screen {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px;
+  }
+
+  .lock-box {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .lock-box input {
+    width: 100%;
+  }
+
+ 
+  .Spotify,
+  .Spotifys {
+    position: relative;
+    right: 0;
+    top: 0;
+    max-width: 100%;
+    margin-top: 25px;
+  }
+
+ 
+  .skills-card {
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    margin-top: 35px;
+    padding: 25px;
+    border-radius: 25px;
+  }
+
+  .quote {
+    font-size: 42px;
+    line-height: 30px;
+  }
+
+  .skills-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .skill-left span,
+  .percent {
+    font-size: 14px;
+  }
+
+  .bar {
+    height: 12px;
+  }
+
+  .containerImage {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .manga-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card,
+  .none {
+    width: 100%;
+    height: 260px;
+  }
+
+  .manga-title {
+    font-size: 18px;
+  }
+
+  .details,
+  .description {
+    font-size: 13px;
+  }
+
+
+  .center img {
+    width: 110px;
+    height: 110px;
+    border-width: 4px;
+  }
+
+  .names {
+    right: 0;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .names h1 {
+    font-size: 26px;
+  }
+
+  .names p {
+    margin-top: -15px;
+    font-size: 13px;
+  }
+}

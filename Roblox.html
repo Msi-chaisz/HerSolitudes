@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Roblox</title>
+  <link rel="stylesheet" href="Styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+ 
+
+    .icons {
+      display: flex;
+      gap: 18px;
+      font-size: 24px;
+            color: white;
+    }
+
+    .section {
+      margin-bottom: 35px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 18px;
+            color: white;
+    }
+
+    .games-row {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scrollbar-width: none;
+    }
+
+    .games-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .game-card {
+      min-width: 220px;
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease;
+      cursor: pointer;
+    }
+
+    .game-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .game-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .game-info {
+      padding: 14px;
+    }
+
+    .game-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .game-stats {
+      display: flex;
+      gap: 16px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 14px 0;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.08);
+    }
+
+    .nav-item {
+      font-size: 26px;
+      color: #444;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .nav-item:hover {
+      transform: scale(1.15);
+      color: black;
+    }
+
+    .profile {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ddd;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 18px;
+      }
+
+      .topbar h1 {
+        font-size: 34px;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .game-card {
+        min-width: 180px;
+      }
+
+      .game-image {
+        height: 180px;
+      }
+    }
+
+    .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.icons {
+  display: flex;
+  gap: 18px;
+  font-size: 24px;
+  color: white;
+}
+
+.section {
+  margin-bottom: 35px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  color: white;
+}
+
+.games-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+
+.games-row::-webkit-scrollbar {
+  display: none;
+}
+
+.game-card {
+  min-width: 220px;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+}
+
+.game-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.game-info {
+  padding: 14px;
+}
+
+.game-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.game-stats {
+  display: flex;
+  gap: 16px;
+  color: #666;
+  font-size: 14px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 14px 0;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.08);
+}
+
+.nav-item {
+  font-size: 26px;
+  color: #444;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-item:hover {
+  transform: scale(1.15);
+  color: black;
+}
+
+.profile {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+
+@media (max-width: 1024px) {
+  body {
+    padding: 20px;
+  }
+
+  .topbar h1 {
+    font-size: 38px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .icons {
+    font-size: 22px;
+    gap: 14px;
+  }
+
+  .game-card {
+    min-width: 200px;
+  }
+
+  .game-image {
+    height: 200px;
+  }
+
+  .game-title {
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 425px) {
+  body {
+    padding: 12px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .topbar h1 {
+    font-size: 26px;
+  }
+
+  .icons {
+    font-size: 20px;
+    gap: 12px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .games-row {
+    gap: 12px;
+  }
+
+  .game-card {
+    min-width: 150px;
+  }
+
+  .game-image {
+    height: 150px;
+  }
+
+  .game-title {
+    font-size: 16px;
+  }
+
+  .game-stats {
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  .bottom-nav {
+    padding: 10px 0;
+  }
+
+  .nav-item {
+    font-size: 22px;
+  }
+
+  .profile {
+    width: 36px;
+    height: 36px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <nav class="sidebar">
+    <ul>
+        <a href="Dashboard.html"><li><i class="fas fa-home"></i></li></a>
+        <a href="Roblox.html"><li  class="active"><i class="fas fa-user"></i></li></a>
+        <a href="Crochet.html"><li><i class="fas fa-briefcase"></i></li></a>
+        <a href="Skill.html"><li><i class="fas fa-code"></i></li></a>
+        <a href="Archive.html"><li><i class="fa-solid fa-box-archive"></i></li></a>
+         <a href="Achievements.html"><li><i class="fa-solid fa-medal"></i></li></a>
+        <a href="Secret.html"><li><i class="fa-solid fa-key"></i></li></a>
+        <a href="index.html"><li><i class="fa-solid fa-right-from-bracket"></i></li></a>
+    </ul>
+</nav>
+
+<section>
+  <div class="topbar">
+    <div class="center">
+              <img src="Pictures/roblox1 (2).png" alt="My Photo">
+      </div>
+    <div class="names">
+      <h1 style="color: white;">Chaii</h1>
+      <p>@channel_357</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">
+      Continue →
+    </div>
+
+    <div class="games-row">
+
+      <div class="game-card">
+        <img class="game-image" src="Pictures/adoptme.png" alt="game">
+
+        <div class="game-info">
+          <div class="game-title">Playing Adopt Me</div>
+
+          <div class="game-stats">
+            <span>👍 92%</span>
+            <span>👥 8.4K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img class="game-image" src="Pictures/latenight.png" alt="game">
+
+        <div class="game-info">
+          <div class="game-title">Late Night Gaming</div>
+
+          <div class="game-stats">
+            <span>👍 87%</span>
+            <span>👥 4.1K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img class="game-image" src="Pictures/speedrun.png" alt="game">
+
+        <div class="game-info">
+          <div class="game-title">Speedrun Challenge</div>
+
+          <div class="game-stats">
+            <span>👍 95%</span>
+            <span>👥 19.9K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img class="game-image" src="Pictures/adventure.png" alt="game">
+
+        <div class="game-info">
+          <div class="game-title">Adventure Mode</div>
+
+          <div class="game-stats">
+            <span>👍 90%</span>
+            <span>👥 12K</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Friend Activity -->
+  <div class="section">
+    <div class="section-title">
+      Friend Activity →
+    </div>
+
+    <div class="games-row">
+
+      <div class="game-card">
+        <img class="game-image" src="Pictures/funnymom.png" alt="game">
+
+        <div class="game-info">
+          <div class="game-title">Funny Moments</div>
+
+          <div class="game-stats">
+            <span>👍 84%</span>
+            <span>👥 3.2K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img class="game-image" src="Pictures/grinding.png" alt="game">
+
+        <div class="game-info">
+          <div class="game-title">Grinding Ranked</div>
+
+          <div class="game-stats">
+            <span>👍 89%</span>
+            <span>👥 6.8K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img class="game-image" src="Pictures/victory.png" alt="game">
+
+        <div class="game-info">
+          <div class="game-title">Victory Compilation</div>
+
+          <div class="game-stats">
+            <span>👍 93%</span>
+            <span>👥 22K</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+</section>
+</body>
+</html>

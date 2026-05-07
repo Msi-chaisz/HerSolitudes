@@ -1,0 +1,495 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: linear-gradient(
+    135deg,
+    #1a0f10,
+    #5a2a2a,
+    #d7837f
+  );
+  color: #eaeaea;
+}
+
+
+.Main {
+  position: relative;
+  height: 90vh;
+  background: url('Pictures/cover3.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 60px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+ background: linear-gradient(
+    to right,
+    rgba(20, 10, 12, 0.92) 0%,
+    rgba(40, 20, 22, 0.75) 30%,
+    rgba(90, 42, 42, 0.45) 60%,
+    rgba(215, 131, 127, 0.08) 100%
+  );
+}
+
+
+.Main-content {
+  position: relative;
+  max-width: 600px;
+  margin-left: 50px;
+}
+.side_image{
+  position: relative;
+  top: 50px;
+  left: 30px;
+
+}
+.title {
+  font-size: 55px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.subtitle {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.description {
+  margin: 20px 0;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.tags button {
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 12px;
+  background-color: transparent;
+  color: #fff;
+  transition: .3s ease;
+}
+
+.tags button:hover{
+    
+    color: #fff;
+    border: transparent;
+    background-color: palevioletred;
+}
+
+.rating {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+
+}
+
+.circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 10px solid gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 120px;
+  margin-top: 55px;
+}
+
+
+.gallery {
+  padding: 10px 60px;
+
+}
+
+.gallery h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s;
+
+    filter: contrast(1.1) brightness(0.95) saturate(1.2);
+}
+.img-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(255, 182, 193, 0.2),
+      rgba(215, 131, 127, 0.4)
+    ),
+    url("https://www.transparenttextures.com/patterns/noise.png");
+
+  opacity: 0.5;
+  pointer-events: none;
+}
+.grid img:hover {
+  transform: scale(1.02);
+}
+
+
+.quote {
+  text-align: center;
+  margin: 40px;
+  font-size: 18px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+  flex-wrap: wrap;
+  background: rgba(0,0,0,0.3);
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+}
+
+.cast, .watch {
+  max-width: 400px;
+}
+
+.watch-icons i {
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 12px;
+    color: #fff;
+}
+.watch{
+    margin-top: 40px;
+}
+
+
+@media (max-width: 1440px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s;
+  margin: 10px;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
+}
+
+  .hero {
+    padding: 30px;
+  }
+
+  .rating {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+ 
+  }
+
+  .circle {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    border: 10px solid gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    }
+
+    .Main-content {
+    position: relative;
+    max-width: 600px;
+    margin-left: 50px;
+    
+    }   
+
+    .title {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tags button {
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 15px;
+  background-color: transparent;
+  color: #fff;
+  transition: .3s ease;
+}
+}
+
+@media (max-width: 768px) {
+
+  .Main {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    padding: 50px 30px;
+  }
+
+  .side_image {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 25px;
+  }
+
+  .side_image img {
+    width: 220px;
+    height: auto;
+  }
+
+  .Main-content {
+    margin-left: 0;
+    max-width: 100%;
+    z-index: 2;
+  }
+
+  .title {
+    font-size: 35px;
+    margin-top: 0;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .tags button {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  .rating {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    margin-top: 30px;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+    margin: auto;
+  }
+
+  .gallery {
+    padding: 40px 30px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .grid img {
+    height: 220px;
+    margin: 0;
+  }
+
+  .quote {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    padding: 40px 30px;
+  }
+
+  .cast,
+  .watch {
+    max-width: 100%;
+  }
+
+  .watch {
+    margin-top: 0;
+  }
+
+  .watch-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .watch-icons i {
+    margin-left: 0;
+  }
+}
+@media (max-width: 1024px) {
+
+  .Main {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    padding: 50px 30px;
+  }
+
+  .side_image {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 25px;
+  }
+
+  .side_image img {
+    width: 220px;
+    height: auto;
+  }
+
+  .Main-content {
+    margin-left: 0;
+    max-width: 100%;
+    z-index: 2;
+  }
+
+  .title {
+    font-size: 35px;
+    margin-top: 0;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .tags button {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  .rating {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    margin-top: 30px;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+    margin: auto;
+  }
+
+  .gallery {
+    padding: 40px 30px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .grid img {
+    height: 220px;
+    margin: 0;
+  }
+
+  .quote {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    padding: 40px 30px;
+  }
+
+  .cast,
+  .watch {
+    max-width: 100%;
+  }
+
+  .watch {
+    margin-top: 0;
+  }
+
+  .watch-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .watch-icons i {
+    margin-left: 0;
+  }
+}
